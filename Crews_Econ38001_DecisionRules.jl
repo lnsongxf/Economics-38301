@@ -4,7 +4,7 @@ function Crews_Econ38001_DecisionRules(w::Float64, E::Array{Float64,2}, K::Array
     theta::Float64, nu::Float64, beta::Float64, delta::Float64, xi::Float64, thresh::Float64,
     p_LL::Float64, p_HH::Float64)
     #=
-    The function takes ten arguments:
+    The function takes eleven arguments:
     + initial wage guess `w`
     + 2D matrix `E` of epsilons
     + 2D matrix `K` of capital values
