@@ -4,7 +4,7 @@ function Crews_Econ38001_ValueFuncIter(V_n::Array{Float64,2}, Pi::Array{Float64,
     E::Array{Float64,2}, K3::Array{Float64,3}, beta::Float64, delta::Float64,
     xi::Float64, thresh::Float64, p_LL::Float64, p_HH::Float64, w::Float64)
     #=
-    The function takes ten arguments:
+    The function takes eleven arguments:
     + matrix `V_n` that represents the value function (nth iteration)
     + matrix `Pi` of maximized payoffs
     + 2D matrix `E` of epsilons
