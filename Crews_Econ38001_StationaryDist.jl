@@ -4,11 +4,11 @@ function Crews_Econ38001_StationaryDist(H::Array{Float64,2}, p_LL::Float64,
     p_HH::Float64)
     #=
     The function takes three arguments:
-    + a decision rule H
-    + transition probabilities p_HH, p_LL
+    + a decision rule `H`
+    + transition probabilities `p_LL`, `p_HH`
 
     The function solves for
-    + a stationary distribution G
+    + a stationary distribution `G`
     =#
 
     # grid size
