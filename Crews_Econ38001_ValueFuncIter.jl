@@ -1,22 +1,24 @@
 ## Crews_Econ38001_ValueFuncIter
 
-function Crews_Econ38001_ValueFuncIter(V_n::Array{Float64,2}, Pi::Array{Float64,2}, E::Array{Float64,2},
-    K3::Array{Float64,3}, beta::Float64, delta::Float64, xi::Float64, p_LL::Float64, p_HH::Float64, w::Float64)
+function Crews_Econ38001_ValueFuncIter(V_n::Array{Float64,2}, Pi::Array{Float64,2},
+    E::Array{Float64,2}, K3::Array{Float64,3}, beta::Float64, delta::Float64,
+    xi::Float64, thresh::Float64, p_LL::Float64, p_HH::Float64, w::Float64)
     #=
     The function takes ten arguments:
-    + matrix V_n that represents the value function (nth iteration)
-    + matrix Pi of maximized payoffs
-    + 2D matrix E of epsilons
-    + 3D matrix K of capital values
-    + discount factor beta
-    + depreciation delta
-    + adjustment cost xi
-    + transition probabilities p_HH, p_LL
-    + wage w
+    + matrix `V_n` that represents the value function (nth iteration)
+    + matrix `Pi` of maximized payoffs
+    + 2D matrix `E` of epsilons
+    + 3D matrix `K` of capital values
+    + discount factor `beta`
+    + depreciation `delta`
+    + adjustment cost `xi`
+    + adjustment threshold `thresh`
+    + transition probabilities `p_HH`, `p_LL`
+    + wage `w`
 
     The function solves for
-    + matrix V_n1 that gives the next iteration of the value function
-    + matrix H_n1 that gives the policy function
+    + matrix `V_n1` that gives the next iteration of the value function
+    + matrix `H_n1` that gives the policy function
     =#
     N = size(V_n)[2]
 
@@ -25,7 +27,7 @@ function Crews_Econ38001_ValueFuncIter(V_n::Array{Float64,2}, Pi::Array{Float64,
         for j = 1:N
             for k = 1:N
                 # ternary operator
-                abs(K3[1,1,k] - (1-delta)*K3[1,1,j]) > 0.05*K3[1,1,j] ? indicPay = 1 : indicPay = 0
+                abs(K3[1,1,k] - (1-delta)*K3[1,1,j]) > thresh * K3[1,1,j] ? indicPay = 1 : indicPay = 0
                 #(2-i) =1 if i=1, =0 if i=2
                 #(i-1) =0 if i=1, =1 if i=2
                 contL = beta*(p_LL*V_n[1,k] + (1-p_LL)*V_n[2,k])
