@@ -1,6 +1,6 @@
-## Crews_Econ38001_StationaryDist
+## Crews_Econ38301_StationaryDist
 
-function Crews_Econ38001_StationaryDist(H::Array{Float64,2}, p_LL::Float64,
+function Crews_Econ38301_StationaryDist(H::Array{Float64,2}, p_LL::Float64,
     p_HH::Float64)
     #=
     The function takes three arguments:
