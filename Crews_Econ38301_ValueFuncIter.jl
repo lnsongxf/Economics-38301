@@ -1,6 +1,6 @@
-## Crews_Econ38001_ValueFuncIter
+## Crews_Econ38301_ValueFuncIter
 
-function Crews_Econ38001_ValueFuncIter(V_n::Array{Float64,2}, Pi::Array{Float64,2},
+function Crews_Econ38301_ValueFuncIter(V_n::Array{Float64,2}, Pi::Array{Float64,2},
     E::Array{Float64,2}, K3::Array{Float64,3}, beta::Float64, delta::Float64,
     xi::Float64, thresh::Float64, p_LL::Float64, p_HH::Float64, w::Float64)
     #=
