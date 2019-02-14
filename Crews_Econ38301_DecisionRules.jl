@@ -1,4 +1,4 @@
-## Crews_Econ38001_DecisionRules
+## Crews_Econ38301_DecisionRules
 
 function Crews_Econ38001_DecisionRules(w::Float64, E::Array{Float64,2}, K::Array{Float64,2},
     theta::Float64, nu::Float64, beta::Float64, delta::Float64, xi::Float64, thresh::Float64,
