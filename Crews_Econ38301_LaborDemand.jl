@@ -1,6 +1,6 @@
-## Crews_Econ38001_LaborDemand
+## Crews_Econ38301_LaborDemand
 
-function Crews_Econ38001_LaborDemand(w::Float64, E::Array{Float64,2}, K::Array{Float64,2},
+function Crews_Econ38301_LaborDemand(w::Float64, E::Array{Float64,2}, K::Array{Float64,2},
     theta::Float64, nu::Float64, beta::Float64, delta::Float64, xi::Float64, thresh::Float64,
     p_LL::Float64, p_HH::Float64)
     #=
@@ -21,8 +21,8 @@ function Crews_Econ38001_LaborDemand(w::Float64, E::Array{Float64,2}, K::Array{F
     =#
     N = size(E)[2]
 
-    H, p_LL, p_HH = Crews_Econ38001_DecisionRules(w, E, K, theta, nu, beta, delta, xi, thresh, p_LL, p_HH)
-    G = Crews_Econ38001_StationaryDist(H, p_LL, p_HH)
+    H, p_LL, p_HH = Crews_Econ38301_DecisionRules(w, E, K, theta, nu, beta, delta, xi, thresh, p_LL, p_HH)
+    G = Crews_Econ38301_StationaryDist(H, p_LL, p_HH)
 
     # firm labor demand function
     n_d = ((nu/w) * E .* K .^(theta)).^(1/(1-nu))
